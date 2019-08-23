@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Modal</title>
+  <link rel="stylesheet" href="app.css">
+  <script src="https://kit.fontawesome.com/71cf908ce5.js"></script>
+  
+</head>
+
+<body>
+
+  <div class="container">
+      <div class="flex align-center align-vert modal modal--align">
+          <div class="modal__container">
+            <a class="modal__close modal__close--x" aria-hidden="true">&#x2715;</a>
+            <div class="video-container">
+                <div class="video-placeholder">
+                  <section class="columns">
+                    <div class="left">
+                      <ul>
+                        <li>
+                          How to Add a New Course List <span><i class="far fa-play-circle"></i></span>
+                        </li>
+                        <hr>
+                        <li>
+                          Navigate The Course List Tab <span><i class="far fa-play-circle"></i></span>
+                        </li>
+                        <hr>
+                        <li>
+                            Course List Manager <span><i class="far fa-play-circle"></i></span>
+                        </li>
+                        <hr>
+                        <li>
+                            How to Create a New User <span><i class="far fa-play-circle"></i></span>
+                        </li>
+                        <hr>
+                      </ul>
+                    </div>
+                    <div class="rigth">
+                      <video id="videoOne" width="100%" height="100%" controls>
+                        <source
+                          src="https://cdn1.knowledgecity.com/wbdiqMXcn4hh6WBJzECJ7Q%3D%3D%2C1566535357/Protected/courses/BUS1233/en/BUS1233-a7zvt/BUS1233-a7zvt--v1565106107.mp4"
+                          type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                  </section>
+                </div>
+              </div>
+          </div>
+        </div>
+    
+    <button class="modal-trigger">OPEN MODAL</button>
+  </div>
+
+  <script src="modal.js"></script>
+</body>
+
+</html>

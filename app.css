@@ -1,0 +1,203 @@
+/*
+URL: https://www.linkedin.com/in/antonionicasio/
+Author: Antonio Nicasio
+Description: Sidebar Player For Software Help 
+Version: 1.0
+Tags: Player, Sidebar Player, Flexbox Player, Flex, Flexbox CSS
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.video-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-placeholder {
+    background: #f1f1f1;
+    color: #333333;
+    width: 100%;
+}
+
+.video-placeholder ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.video-placeholder li {
+    font-size: 1.1rem;
+    font-weight: 500;
+    position: relative;
+    padding: 1rem;
+}
+
+.video-placeholder li:hover{
+    background-color: #333333;
+    color: #ffffff;
+    transition: .1s ease;
+}
+
+.video-placeholder li:hover:before {
+    padding: 23px 1px;
+    right: 100%;
+	top: 0;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(136, 183, 213, 0);
+	border-left-color: #333333;
+    background-color: #333333;
+    transition: .1s ease;
+}
+.video-placeholder li:hover:after {
+    left: 100%;
+    padding-left: 10px;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(136, 183, 213, 0);
+	border-left-color: #333333;
+	border-width: 25px;
+    margin-top: -25px;
+    transition: .1s ease;
+}
+
+.video-placeholder i {
+    position: absolute;
+    font-size: 1.5rem;
+    left: 88%;
+    top: 14px;
+}
+
+.columns {
+    display: flex;
+}
+
+.columns .left {
+    padding: .5rem;
+    padding-right: 0;
+    width: calc(33.3% - 1rem);
+}
+
+.columns .left hr {
+    border: 1px solid #dedede;
+    margin-right: 2rem;
+}
+
+.columns .rigth {
+    width: calc(66.7% - 1rem);
+}
+
+/* demo only */
+.flex {
+    display: flex;
+}
+
+.align-center {
+    justify-content: center;
+}
+
+.align-vert,
+.align-vert.align-center {
+    align-items: center;
+}
+
+/* end demo */
+
+.modal {
+    display: none;
+}
+
+.modal--show,
+.modal--hide {
+    display: flex;
+}
+
+/* classes fired by js for animation control */
+
+/* This is on the wrapper for the whole modal */
+.modal--align {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 999;
+}
+
+.modal__container {
+    position: relative;
+    width: 100%;
+    max-width: 50%;
+    max-height: 800px;
+    padding:0;
+    margin: 12px;
+    background: transparent;
+}
+
+/* The .modal__close class is used in js but is modified '--x' here */
+.modal__close--x {
+    font-size: 30px;
+    /* this is only because we use unicode for the X in this case */
+    position: absolute;
+    top: 3px;
+    right: 10px;
+}
+
+/* As there is no href to avoid the hash being added to the URL when clicked we add a pointer */
+/* This 'x' is hidden from screen readers as there is an accessible close button in the modal */
+.modal__close--x:hover {
+    cursor: pointer;
+}
+
+/* Animations */
+/* Open */
+.modal.modal--show {
+    animation: modal-open 0.3s;
+}
+
+@keyframes modal-open {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Close */
+.modal.modal--hide {
+    animation: modal-close 0.3s;
+}
+
+@keyframes modal-close {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
